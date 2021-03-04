@@ -1,12 +1,14 @@
 import React from "react";
 import Header from "../components/Header";
-import Schools from "../components/Schools";
+import Houses from "../components/Houses";
+import Students from "../components/Students";
 
 const Intro = () => {
   return (
     <>
       <Header />
-      <Schools />
+      <Houses />
+      <Students />
     </>
   );
 };

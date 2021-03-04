@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "house": "gryffindor",
+    "score": 500
+  },
+  {
+    "id": 2,
+    "house": "hufflepuff",
+    "score": 500
+  },
+  {
+    "id": 3,
+    "house": "ravenclow",
+    "score": 500
+  },
+  {
+    "id": 4,
+    "house": "slytherin",
+    "score": 500
+  }
+]

@@ -15,7 +15,7 @@ export const SchoolItem = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #222831;
+  background-color: #0c2b32;
   gap: 0.5rem;
   border-radius: 5px;
   transition: 0.2s;
@@ -24,15 +24,19 @@ export const SchoolItem = styled.div`
     box-shadow: 0 5px 10px rgba(235, 25, 110, 1);
   }
 
-  svg {
+  img {
     height: 10rem;
     width: 10rem;
     border-bottom: 1px solid #fff;
     padding: 0.5rem 0;
-    background-color: #222831;
+    background-color: #0c2b32;
   }
 
   h2 {
     color: #fff;
+  }
+
+  span {
+    color: yellow;
   }
 `;

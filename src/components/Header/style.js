@@ -8,7 +8,7 @@ export const HeaderTag = styled.header`
   gap: 1.5rem;
   justify-content: start;
 
-  svg {
+  img {
     height: 3rem;
     width: 3rem;
     margin-left: 1rem;
