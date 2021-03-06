@@ -1,4 +1,10 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const animationCard = keyframes`
+  to{
+    transform: translate(0px, 0px);
+  }
+`;
 
 export const ContainerSchool = styled.div`
   display: flex;
@@ -19,6 +25,9 @@ export const SchoolItem = styled.div`
   gap: 0.5rem;
   border-radius: 5px;
   transition: 0.2s;
+  position: relative;
+  margin-bottom: 1.5rem;
+  animation: ${animationCard} 1s forwards;
 
   &:hover {
     box-shadow: 0 5px 10px rgba(235, 25, 110, 1);
@@ -36,7 +45,15 @@ export const SchoolItem = styled.div`
     color: #fff;
   }
 
-  span {
+  span:nth-child(3) {
     color: yellow;
   }
+`;
+
+export const ClassificationNumber = styled.span`
+  position: absolute;
+  color: #252525;
+  bottom: -1.8rem;
+  font-weight: 600;
+  font-size: 1.3rem;
 `;

@@ -9,6 +9,7 @@ const Text = ({ children, setValue, value }) => {
         type="number"
         onChange={({ target }) => setValue(target.value)}
         value={value}
+        min="0"
       />
     </Label>
   );

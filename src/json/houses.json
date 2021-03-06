@@ -2,7 +2,7 @@
   {
     "id": 1,
     "house": "gryffindor",
-    "score": 500
+    "score": 400
   },
   {
     "id": 2,
@@ -11,12 +11,12 @@
   },
   {
     "id": 3,
-    "house": "ravenclow",
-    "score": 500
+    "house": "ravenclaw",
+    "score": 100
   },
   {
     "id": 4,
     "house": "slytherin",
-    "score": 500
+    "score": 50
   }
 ]

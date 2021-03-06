@@ -10,7 +10,7 @@ import {
   TableStudents,
 } from "./style";
 
-const Students = () => {
+const Students = ({ setShowLoading }) => {
   const [students, setStudents] = React.useState([]);
   const [studentModal, setStudentsModal] = React.useState({});
   const [showModal, setShowModal] = React.useState(false);
@@ -20,7 +20,7 @@ const Students = () => {
       .get("http://hp-api.herokuapp.com/api/characters/students")
       .then((response) => {
         setStudents(response.data);
-        console.log(response.data);
+        setShowLoading(false);
       })
       .catch((err) => console.log(err));
   }, []);
@@ -60,7 +60,12 @@ const Students = () => {
         </TableStudents>
       </ContainerStudent>
 
-      {showModal && <ModalStudent studentModal={studentModal}></ModalStudent>}
+      {showModal && (
+        <ModalStudent
+          studentModal={studentModal}
+          setShowModal={setShowModal}
+        ></ModalStudent>
+      )}
     </>
   );
 };
