@@ -2,18 +2,27 @@ import React from "react";
 import axios from "axios";
 import { AiFillContainer } from "react-icons/ai";
 
+import { ReactComponent as ArrowSVG } from "../../assets/icons/up-arrow.svg";
+import { ReactComponent as RedArrowSVG } from "../../assets/icons/red-arrow.svg";
+
 import ModalStudent from "../ModalStudent";
 
 import {
   ButtonAlterarPontuacao,
   ContainerStudent,
+  MessageAddPts,
+  MessageRemovePts,
   TableStudents,
 } from "./style";
 
 const Students = ({ setShowLoading }) => {
   const [students, setStudents] = React.useState([]);
   const [studentModal, setStudentsModal] = React.useState({});
+  const [pontos, setPontos] = React.useState("0");
+
   const [showModal, setShowModal] = React.useState(false);
+  const [showMessageAddPts, setShowMessageAddPts] = React.useState(false);
+  const [showMessageRemovePts, setShowMessageRemovePts] = React.useState(false);
 
   React.useEffect(() => {
     axios
@@ -23,7 +32,7 @@ const Students = ({ setShowLoading }) => {
         setShowLoading(false);
       })
       .catch((err) => console.log(err));
-  }, []);
+  }, [setShowLoading]);
 
   const handleScore = (student) => {
     setStudentsModal(student);
@@ -62,9 +71,38 @@ const Students = ({ setShowLoading }) => {
 
       {showModal && (
         <ModalStudent
+          setPontos={setPontos}
           studentModal={studentModal}
           setShowModal={setShowModal}
+          setShowMessageAddPts={setShowMessageAddPts}
+          setShowMessageRemovePts={setShowMessageRemovePts}
         ></ModalStudent>
+      )}
+
+      {showMessageAddPts && (
+        <MessageAddPts>
+          <h3>{studentModal.house}</h3>
+          <div>
+            <ArrowSVG />
+            <span>
+              +{pontos}
+              <br /> Pontos
+            </span>
+          </div>
+        </MessageAddPts>
+      )}
+
+      {showMessageRemovePts && (
+        <MessageRemovePts>
+          <h3>{studentModal.house}</h3>
+          <div>
+            <RedArrowSVG />
+            <span>
+              -{pontos}
+              <br /> Pontos
+            </span>
+          </div>
+        </MessageRemovePts>
       )}
     </>
   );

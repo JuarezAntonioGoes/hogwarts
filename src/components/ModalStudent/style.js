@@ -108,3 +108,4 @@ export const BtnAddPts = styled(BtnTirarPonto)`
     background-color: #00838f;
   }
 `;
+

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 export const ContainerStudent = styled.div``;
 
@@ -49,4 +49,59 @@ export const ButtonAlterarPontuacao = styled.button`
   cursor: pointer;
 
   display: flex;
+`;
+
+const animationMessage = keyframes`
+  from{
+    opacity: 0;
+    transform: translatey(30px);
+  }
+  to{
+    opacity: initial;
+    transform: initial;
+  }
+`;
+
+export const MessageAddPts = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: #fff;
+  border: 1px solid #6ac259;
+  border-radius: 4px;
+
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  padding: 0.3rem;
+
+  animation: ${animationMessage} 0.3s forwards;
+
+  h3 {
+    text-transform: capitalize;
+    color: #333;
+  }
+
+  div {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  svg {
+    height: 3rem;
+  }
+
+  span {
+    color: #6ac259;
+    font-weight: 600;
+    font-size: 1.2rem;
+  }
+`;
+
+export const MessageRemovePts = styled(MessageAddPts)`
+  border: 1px solid red;
+
+  span {
+    color: red;
+  }
 `;
